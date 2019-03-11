@@ -15,6 +15,7 @@
 						<input
 							style="border-bottom:1px solid #444444;"
 							type="text"
+							:auto-focus="true"
 							placeholder="输入签名"
 							v-if="editInfo"
 							v-model="signStr"
@@ -230,7 +231,8 @@ export default {
 			}
 
 			.user-info {
-				flex: 1 0 auto;
+				flex: 1 0 150upx;
+				width: 150upx;
 				display: flex;
 				height: 100upx;
 				flex-direction: column;
