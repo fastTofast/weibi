@@ -18,5 +18,7 @@
     
 ## 结果
   ### 已生成APP和H5,小程序发布由于只支持https，暂时无法发布
-  ### H5地址： ![image](https://github.com/fastTofast/picture/blob/master/weibi-h5.png?raw=true)
-  ### App地址:http://www.nodetop.top/app/android/weibi.apk
+  ### H5地址 
+  ![image](https://github.com/fastTofast/picture/blob/master/weibi-h5.png?raw=true)
+  ### App地址
+  ![image](https://github.com/fastTofast/picture/blob/master/weibi-android.png?raw=true)
