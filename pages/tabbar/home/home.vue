@@ -11,7 +11,7 @@
 			</view>
 		</view>
 		<!-- <button type="primary" open-type="getUserInfo" @getuserinfo="getuserinfo">HHHHH</button> -->
-		<swiper :current="tabIndex" class="home-swiper">
+		<swiper :current="tabIndex" class="home-swiper" @change="changeSwiper">
 			<swiper-item class="home-swiper-item" v-for="(kind, index1) in tabNames" :key="index1">
 				<!-- <view class="swiper-item" > -->
 				<scroll-view scroll-y class="scroll-content">
@@ -91,6 +91,13 @@ export default {
 		getuserinfo(data) {
 			console.log(data);
 		},
+
+		changeSwiper(event) {
+			let { current: current, source: source } = event.detail;
+			if (source === 'touch') {
+				this.changeTab(current);
+			}
+		},
 		changeTab(index) {
 			this.getList(index);
 			this.setTabIndext(index);
@@ -102,13 +109,15 @@ export default {
 			} else {
 				url = '/publicService/article/list';
 			}
-			setTimeout(() => {
 				this.$http(url, {
 					type: this.tabNames[index].code
 				}).then(data => {
+			// setTimeout(() => {
+				this.$nextTick(function(){
 					this.kindList.splice(index, 1, data.result);
+				})
+			// }, 400);
 				});
-			}, 300);
 		},
 		deleteArticle(id, index) {
 			this.$http(

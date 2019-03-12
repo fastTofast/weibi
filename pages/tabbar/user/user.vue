@@ -150,7 +150,7 @@ export default {
 		&:first-child {
 			flex: 0 0 auto;
 			background-color: #444444;
-			height: 260upx;
+			height: 240upx;
 		}
 
 		&:last-child {
@@ -175,6 +175,10 @@ export default {
 			.section-text {
 				height: 120upx;
 				line-height: 120upx;
+				/* #ifdef H5 */
+				height: 105upx;
+				line-height: 105upx;
+				/* #endif */
 			}
 		}
 	}
@@ -182,13 +186,13 @@ export default {
 	&:after,
 	&:before {
 		content: '';
-		height: 240upx;
+		height: 230upx;
 		width: 630upx;
 		position: absolute;
 		z-index: 1;
 		margin: 0 auto;
 		background-color: #f00;
-		top: 170upx;
+		top: 140upx;
 		bottom: 0;
 		border-radius: 12upx;
 		left: 0;
@@ -199,10 +203,10 @@ export default {
 
 	.user-card {
 		font-size: 28upx;
-		height: 250upx;
+		height: 240upx;
 		width: 660upx;
 		position: absolute;
-		top: 160upx;
+		top: 130upx;
 		left: 50%;
 		transform: translateX(-50%);
 		margin: 0 auto;

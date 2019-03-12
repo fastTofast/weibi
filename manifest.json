@@ -78,6 +78,7 @@
         "domain" : "www.nodetop.top",
         "router" : {
             "base" : "/h5/weibi/"
-        }
+        },
+        "template" : ""
     }
 }

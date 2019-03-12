@@ -115,7 +115,6 @@ export default function $http(options) {
 			reject(e);
 		};
 		_options.url = baseUrl + _options.url;
-		console.log('opsionts: ', _options)
 		setTimeout(() => {
 			uni.request(_options);
 		}, 100)
