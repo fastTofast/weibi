@@ -279,12 +279,9 @@ export default {
 		.article-info {
 			color: #fcfcfd;
 			font-size: 20upx;
-
 			display: flex;
-			flex: 1 1 20upx;
-
+			justify-content:space-between;
 			.info-item {
-				flex: 1;
 				height: 20upx;
 				line-height: 20upx;
 			}
