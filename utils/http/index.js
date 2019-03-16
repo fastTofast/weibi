@@ -38,6 +38,7 @@ export default function $http(options) {
 			title: '加载中'
 		});
 	}
+	_options.url = baseUrl + _options.url;
 	// vuid=8e3c654ad29699760973bd35fc7aa3c2;auth=4ef367e31ecc289d85ca83f5c3e22f74;vuser=test;
 	return new Promise((resolve, reject) => {
 		_options.success = function(res) {
@@ -114,7 +115,6 @@ export default function $http(options) {
 			});
 			reject(e);
 		};
-		_options.url = baseUrl + _options.url;
 		setTimeout(() => {
 			uni.request(_options);
 		}, 100)
