@@ -41,7 +41,12 @@
 							<text>{{ article.content }}</text>
 						</view>
 						<view class="article-item article-info">
+							<!-- #ifdef MP-WEIXIN -->
+							<text class="info-item">分类: {{ article.kind }}</text>
+							<!-- #endif -->
+							<!-- #ifndef MP-WEIXIN -->
 							<text class="info-item">作者: {{ article.author }}</text>
+							<!-- #endif -->
 							<text class="info-item">时间 : {{ article.creationDate }}</text>
 						</view>
 					</view>
@@ -78,6 +83,14 @@ export default {
 		};
 	},
 	created() {
+		// #ifdef MP-WEIXIN
+		this.tabNames = [
+			{
+				name: '我的备忘录',
+				code: 'attention'
+			}
+		];
+		// #endif
 		this.kindList = this.tabNames.map(n => []);
 	},
 	onShow() {
@@ -109,15 +122,15 @@ export default {
 			} else {
 				url = '/publicService/article/list';
 			}
-				this.$http(url, {
-					type: this.tabNames[index].code
-				}).then(data => {
-			// setTimeout(() => {
-				this.$nextTick(function(){
+			this.$http(url, {
+				type: this.tabNames[index].code
+			}).then(data => {
+				// setTimeout(() => {
+				this.$nextTick(function() {
 					this.kindList.splice(index, 1, data.result);
-				})
-			// }, 400);
 				});
+				// }, 400);
+			});
 		},
 		deleteArticle(id, index) {
 			this.$http(
@@ -175,7 +188,6 @@ export default {
 		transform: translateX(-50%);
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	}
-
 	.content-item:last-child {
 		flex: 0 0 200upx;
 		background-color: #ff2672;
@@ -186,6 +198,13 @@ export default {
 		text-align: center;
 		font-size: 26upx;
 	}
+	/* #ifdef MP-WEIXIN */
+	.bar-item {
+		text-align: left;
+		padding-left: 20upx;
+		font-size: 26upx !important;
+	}
+	/* #endif */
 
 	.home-swiper {
 		flex: 1 0 auto;
@@ -280,7 +299,7 @@ export default {
 			color: #fcfcfd;
 			font-size: 20upx;
 			display: flex;
-			justify-content:space-between;
+			justify-content: space-between;
 			.info-item {
 				height: 20upx;
 				line-height: 20upx;

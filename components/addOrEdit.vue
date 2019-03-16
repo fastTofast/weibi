@@ -9,14 +9,16 @@
 			/>
 		</view>
 		<view class="content-item">
+			
 			<view class="item-two">
-				<picker mode="selector" :range="kindList" @change="changeKind">
+				<picker style="width:100%;" mode="selector" :range="kindList" @change="changeKind">
 					<view class="kind">
 						<view class="kind-item">选择分类 :</view>
 						<view class="kind-item">{{ article.kind }}</view>
 					</view>
 				</picker>
 			</view>
+			<!-- #ifndef MP-WEIXIN -->
 			<view class="item-two">
 				<view class="switch-title">共享</view>
 				<switch
@@ -27,6 +29,7 @@
 					@change="switchChange"
 				/>
 			</view>
+			<!-- #endif -->
 		</view>
 		<view class="content-item richtext">
 			<textarea
@@ -66,7 +69,10 @@ export default {
 	},
 	props: ['srcArticle', 'modifyFlag'],
 	created() {
-		console.log(this.modifyFlag,this.srcArticle)
+		// #ifdef MP-WEIXIN
+		this.article.shareFlag = false;
+		// #endif
+		console.log(this.modifyFlag, this.srcArticle);
 		if (this.modifyFlag) {
 			this.article = this.srcArticle;
 		}
