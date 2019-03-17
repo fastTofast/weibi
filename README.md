@@ -17,7 +17,7 @@
    ### 10、个人页信息展示，可编辑签名
     
 ## 成果
-  ### 已生成APP和H5,小程序发布由于只支持https，暂时无法发布
+  ### 已生成APP和H5,小程序待发布
   测试账号：test1 密码：test
   ### H5地址 
   ![image](https://github.com/fastTofast/picture/blob/master/weibi-h5.png?raw=true)
