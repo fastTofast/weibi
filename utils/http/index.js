@@ -51,7 +51,6 @@ export default function $http(options) {
 					setCookie(res)
 					// #endif
 					resolve(res.data.data);
-					uni.hideLoading();
 				} else {
 					if (res.data.code === '-1000') {
 						uni.showModal({

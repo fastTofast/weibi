@@ -4,37 +4,37 @@
 		{
 			"path": "pages/tabbar/home/home",
 			"style": {
-				"navigationBarTitleText": "微笔"
+				"navigationBarTitleText": "记账-首页"
 			}
 		},
 		{
 			"path": "pages/tabbar/publish/publish",
 			"style": {
-				"navigationBarTitleText": "微笔-发布"
+				"navigationBarTitleText": "记账"
 			}
 		},
 		{
 			"path": "pages/tabbar/publish/modify",
 			"style": {
-				"navigationBarTitleText": "微笔-修改"
+				"navigationBarTitleText": "记账-修改"
 			}
 		},
 		{
 			"path": "pages/tabbar/user/user",
 			"style": {
-				"navigationBarTitleText": "微笔-用户"
+				"navigationBarTitleText": "记账-用户"
 			}
 		},
 		{
 			"path": "pages/tabbar/user/signIn",
 			"style": {
-				"navigationBarTitleText": "微笔-登录"
+				"navigationBarTitleText": "记账-登录"
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "微笔",
+		"navigationBarTitleText": "记账",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
@@ -49,26 +49,17 @@
 				"selectedIconPath": "static/img/tabbar/homeactive.png",
 				"text": "首页"
 			},
-			//#ifdef MP-WEIXIN
 			{
 				"pagePath": "pages/tabbar/publish/publish",
 				"iconPath": "static/img/tabbar/add.png",
 				"selectedIconPath": "static/img/tabbar/addactive.png",
-				"text": "发布"
+				"text": "记账"
 			},
-			//#endif
-			//#ifndef MP-WEIXIN
-			{
-				"pagePath": "pages/tabbar/publish/publish",
-				"iconPath": "static/img/tabbar/add.png",
-				"selectedIconPath": "static/img/tabbar/addactive.png"
-			},
-			//#endif
 			{
 				"pagePath": "pages/tabbar/user/user",
 				"iconPath": "static/img/tabbar/me.png",
 				"selectedIconPath": "static/img/tabbar/meactive.png",
-				"text": "我"
+				"text": "我的"
 			}
 		]
 	}

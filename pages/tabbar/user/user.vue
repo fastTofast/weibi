@@ -32,7 +32,7 @@
 				</view>
 			</view>
 			<view class="user-card-item">
-				<text class="link-style" @touchend="showPage(3)">我的笔记</text>
+				<text class="link-style" @touchend="showPage(3)">我的记录</text>
 				<text class="link-style">我的信息</text>
 			</view>
 		</view>
@@ -99,7 +99,7 @@ export default {
 			uni.showToast({ title: '暂未开放', icon: 'none' });
 		},
 		aboutus() {
-			uni.showToast({ title: '你的随时笔记', icon: 'none' });
+			uni.showToast({ title: '欢迎指正', icon: 'none' });
 		},
 		login() {
 			uni.navigateTo({

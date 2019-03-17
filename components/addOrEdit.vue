@@ -47,7 +47,7 @@
 				plain="true"
 				@touchend="publish"
 			>
-				{{ modifyFlag ? '确认修改' : '发布' }}
+				{{ modifyFlag ? '确认修改' : '保存' }}
 			</button>
 		</view>
 	</view>

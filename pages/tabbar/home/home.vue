@@ -86,7 +86,7 @@ export default {
 		// #ifdef MP-WEIXIN
 		this.tabNames = [
 			{
-				name: '我的备忘录',
+				name: '记账',
 				code: 'attention'
 			}
 		];
