@@ -38,6 +38,8 @@
 		</view>
 		<view class="user-content-item">
 			<view class="section-content">
+				<!-- #ifndef MP-WEIXIN -->
+				
 				<view class="section" @touchend="mark">
 					<text class="section-text">我的收藏</text>
 					<uni-icon type="forward" color="#999999"></uni-icon>
@@ -46,6 +48,7 @@
 					<text class="section-text">我的关注</text>
 					<uni-icon type="forward" color="#999999"></uni-icon>
 				</view>
+				<!-- #endif -->
 				<view class="section" @touchend="updatePwd">
 					<text class="section-text">修改密码</text>
 					<uni-icon type="forward" color="#999999"></uni-icon>
@@ -96,7 +99,7 @@ export default {
 			uni.showToast({ title: '暂未开放', icon: 'none' });
 		},
 		aboutus() {
-			uni.showToast({ title: '欢迎指正', icon: 'none' });
+			uni.showToast({ title: '你的随时笔记', icon: 'none' });
 		},
 		login() {
 			uni.navigateTo({

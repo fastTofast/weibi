@@ -122,6 +122,9 @@ export default {
 			} else {
 				url = '/publicService/article/list';
 			}
+			// #ifdef MP-WEIXIN
+			url = '/service/article/list';
+			// #endif
 			this.$http(url, {
 				type: this.tabNames[index].code
 			}).then(data => {

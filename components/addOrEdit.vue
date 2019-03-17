@@ -9,7 +9,6 @@
 			/>
 		</view>
 		<view class="content-item">
-			
 			<view class="item-two">
 				<picker style="width:100%;" mode="selector" :range="kindList" @change="changeKind">
 					<view class="kind">
@@ -35,7 +34,7 @@
 			<textarea
 				placeholder="点击输入内容"
 				v-model="article.content"
-				style="height:560upx;width:100%;padding-top:10upx;"
+				class="article-textarea"
 				:maxlength="600"
 				:focus="true"
 				placeholder-style="color:#b2b2b2;font-size:26upx;"
@@ -131,6 +130,13 @@ export default {
 	.content-item-input input {
 		height: 80upx !important;
 		line-height: 80upx !important;
+	}
+	.article-textarea {
+		height: 560upx;
+		width: 100%;
+		padding-top: 10upx;
+		line-height: 34upx;
+		font-size: 22upx;
 	}
 	.kind {
 		display: flex;
