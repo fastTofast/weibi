@@ -17,7 +17,6 @@
 					</view>
 				</picker>
 			</view>
-			<!-- #ifndef MP-WEIXIN -->
 			<view class="item-two">
 				<view class="switch-title">共享</view>
 				<switch
@@ -28,7 +27,6 @@
 					@change="switchChange"
 				/>
 			</view>
-			<!-- #endif -->
 		</view>
 		<view class="content-item richtext">
 			<textarea
@@ -47,7 +45,7 @@
 				plain="true"
 				@touchend="publish"
 			>
-				{{ modifyFlag ? '确认修改' : '保存' }}
+				{{ modifyFlag ? '确认修改' : '发布' }}
 			</button>
 		</view>
 	</view>
@@ -68,9 +66,6 @@ export default {
 	},
 	props: ['srcArticle', 'modifyFlag'],
 	created() {
-		// #ifdef MP-WEIXIN
-		this.article.shareFlag = false;
-		// #endif
 		console.log(this.modifyFlag, this.srcArticle);
 		if (this.modifyFlag) {
 			this.article = this.srcArticle;

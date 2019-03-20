@@ -26,7 +26,8 @@ export default function $http(options) {
 		let params = {
 			url: args[0],
 			data: args[1],
-			method: args[2] || 'GET'
+			method: args[2] || 'GET',
+			noLoading: args[3]
 		}
 		_options = Object.assign(_options, params);
 	}
@@ -39,8 +40,10 @@ export default function $http(options) {
 		});
 	}
 	_options.url = baseUrl + _options.url;
+	console.log('_option: ', _options);
 	// vuid=8e3c654ad29699760973bd35fc7aa3c2;auth=4ef367e31ecc289d85ca83f5c3e22f74;vuser=test;
 	return new Promise((resolve, reject) => {
+		console.log('Promise : ', resolve, reject);
 		_options.success = function(res) {
 			console.log('success : ', res);
 			uni.hideLoading();
@@ -104,6 +107,9 @@ export default function $http(options) {
 				reject(res);
 			}
 		};
+		_options.complete = function(p) {
+			console.log('p:', p);
+		}
 		_options.fail = function(e) {
 			uni.hideLoading();
 			uni.showModal({
@@ -114,8 +120,6 @@ export default function $http(options) {
 			});
 			reject(e);
 		};
-		setTimeout(() => {
-			uni.request(_options);
-		}, 100)
+		uni.request(_options);
 	})
 }

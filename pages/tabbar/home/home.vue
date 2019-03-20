@@ -12,7 +12,11 @@
 		</view>
 		<!-- <button type="primary" open-type="getUserInfo" @getuserinfo="getuserinfo">HHHHH</button> -->
 		<swiper :current="tabIndex" class="home-swiper" @change="changeSwiper">
-			<swiper-item class="home-swiper-item" v-for="(kind, index1) in tabNames" :key="index1">
+			<swiper-item
+				class="home-swiper-item"
+				v-for="(tab, tabIndex) in tabNames"
+				:key="tabIndex"
+			>
 				<!-- <view class="swiper-item" > -->
 				<scroll-view scroll-y class="scroll-content">
 					<view
@@ -22,7 +26,7 @@
 					>
 						<view class="article-item article-title-section">
 							<text class="article-title">{{ article.title }}</text>
-							<view class="operate-section" v-if="tabIndex === 3">
+							<view class="operate-section" v-if="tab.code === 'mine'">
 								<uni-icon
 									class="operate-icon"
 									type="compose"
@@ -41,12 +45,8 @@
 							<text>{{ article.content }}</text>
 						</view>
 						<view class="article-item article-info">
-							<!-- #ifdef MP-WEIXIN -->
-							<text class="info-item">分类: {{ article.kind }}</text>
-							<!-- #endif -->
-							<!-- #ifndef MP-WEIXIN -->
 							<text class="info-item">作者: {{ article.author }}</text>
-							<!-- #endif -->
+							<text class="info-item">分类: {{ article.kind }}</text>
 							<text class="info-item">时间 : {{ article.creationDate }}</text>
 						</view>
 					</view>
@@ -76,21 +76,13 @@ export default {
 				},
 				{
 					name: '我的',
-					code: 'attention'
+					code: 'mine'
 				}
 			],
 			kindList: []
 		};
 	},
 	created() {
-		// #ifdef MP-WEIXIN
-		this.tabNames = [
-			{
-				name: '记账',
-				code: 'attention'
-			}
-		];
-		// #endif
 		this.kindList = this.tabNames.map(n => []);
 	},
 	onShow() {
@@ -112,8 +104,8 @@ export default {
 			}
 		},
 		changeTab(index) {
-			this.getList(index);
 			this.setTabIndext(index);
+			this.getList(index);
 		},
 		getList(index) {
 			let url = '';
@@ -122,17 +114,11 @@ export default {
 			} else {
 				url = '/publicService/article/list';
 			}
-			// #ifdef MP-WEIXIN
-			url = '/service/article/list';
-			// #endif
 			this.$http(url, {
 				type: this.tabNames[index].code
 			}).then(data => {
-				// setTimeout(() => {
-				this.$nextTick(function() {
-					this.kindList.splice(index, 1, data.result);
-				});
-				// }, 400);
+				console.log('data: ', data);
+				this.kindList.splice(index, 1, data.result);
 			});
 		},
 		deleteArticle(id, index) {
@@ -200,15 +186,8 @@ export default {
 		flex: 1 0 auto;
 		text-align: center;
 		font-size: 26upx;
+		transition: all 0.2s;
 	}
-	/* #ifdef MP-WEIXIN */
-	.bar-item {
-		text-align: left;
-		padding-left: 20upx;
-		font-size: 26upx !important;
-	}
-	/* #endif */
-
 	.home-swiper {
 		flex: 1 0 auto;
 		width: 100%;

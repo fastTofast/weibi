@@ -4,37 +4,37 @@
 		{
 			"path": "pages/tabbar/home/home",
 			"style": {
-				"navigationBarTitleText": "记账-首页"
+				"navigationBarTitleText": "微笔-首页"
 			}
 		},
 		{
 			"path": "pages/tabbar/publish/publish",
 			"style": {
-				"navigationBarTitleText": "记账"
+				"navigationBarTitleText": "发布"
 			}
 		},
 		{
 			"path": "pages/tabbar/publish/modify",
 			"style": {
-				"navigationBarTitleText": "记账-修改"
+				"navigationBarTitleText": "微笔-修改"
 			}
 		},
 		{
 			"path": "pages/tabbar/user/user",
 			"style": {
-				"navigationBarTitleText": "记账-用户"
+				"navigationBarTitleText": "微笔-用户"
 			}
 		},
 		{
 			"path": "pages/tabbar/user/signIn",
 			"style": {
-				"navigationBarTitleText": "记账-登录"
+				"navigationBarTitleText": "微笔-登录"
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "记账",
+		"navigationBarTitleText": "微笔",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
@@ -53,7 +53,7 @@
 				"pagePath": "pages/tabbar/publish/publish",
 				"iconPath": "static/img/tabbar/add.png",
 				"selectedIconPath": "static/img/tabbar/addactive.png",
-				"text": "记账"
+				"text": "微笔"
 			},
 			{
 				"pagePath": "pages/tabbar/user/user",
