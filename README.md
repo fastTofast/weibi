@@ -16,10 +16,3 @@
    ### 9、对自己的记录进行删除
    ### 10、个人页信息展示，可编辑签名
     
-## 成果
-  ### 已生成APP和H5,小程序待发布
-  测试账号：test1 密码：test
-  ### H5地址 
-  ![image](https://github.com/fastTofast/picture/blob/master/weibi-h5.png?raw=true)
-  ### App地址
-  ![image](https://github.com/fastTofast/picture/blob/master/weibi-android.png?raw=true)
